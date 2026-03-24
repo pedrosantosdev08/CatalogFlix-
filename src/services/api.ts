@@ -1,5 +1,3 @@
-// src/services/api.ts
-
 export interface Movie {
   id: number;
   title?: string;
@@ -27,7 +25,7 @@ interface TMDBResponse<T> {
 }
 
 const API_TOKEN = import.meta.env.VITE_API_TOKEN;
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+const BASE_URL = "https://api.themoviedb.org/3";
 
 export const fetchFromTMDB = async <T>(
   endpoint: string, 
@@ -47,7 +45,6 @@ export const fetchFromTMDB = async <T>(
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      
       "Authorization": `Bearer ${API_TOKEN}`
     }
   });

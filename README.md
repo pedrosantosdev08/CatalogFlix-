@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+# 🎬 CatalogFlix - React Edition
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-Currently, two official plugins are available:
+O **CatalogFlix** é uma evolução de um projeto anteriormente desenvolvido em JavaScript Vanilla, agora refatorado para **React** e **TypeScript**. É um catálogo de streaming de alta performance que consome a API do TMDB para exibir filmes e séries com uma interface premium e responsiva.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Evolução Técnica: Vanilla ➔ React
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Esta nova versão foca em escalabilidade e componentização:
+- **Gestão de Estado:** Troca de manipulação direta do DOM por `useState` e `useEffect`.
+- **Tipagem Estrita:** Uso de TypeScript para garantir a integridade dos dados vindos da API.
+- **Performance:** Implementação de debouncing na busca para otimizar o consumo de dados.
+- **Arquitetura:** Separação clara entre serviços (API), componentes de UI e lógica de negócio.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔥 Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Navegação Fluida:** Alternância entre filmes e séries sem recarregamento de página.
+- **Sistema de Filtros:** Descoberta de conteúdo por gêneros através de chips interativos.
+- **Busca em Tempo Real:** Pesquisa dinâmica com feedback imediato.
+- **Experiência Mobile:** Header adaptável com menu drawer e busca otimizada para toque.
+- **UI Premium:** Design escuro com efeitos de Glassmorphism e transições suaves.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Tecnologias Utilizadas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Core:** React 18 + Vite
+- **Linguagem:** TypeScript
+- **Icons:** FontAwesome (React Component)
+- **Data Fetching:** Fetch API integrada ao ecossistema TMDB
+- **Estilização:** CSS Modules / Variáveis Globais (Design Tokens)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📦 Instalação e Uso
+
+1. Clone este repositório:
+   ```bash
+   git clone [https://github.com/pedrosantosdev08/CatalogFlix-.git](https://github.com/pedrosantosdev08/CatalogFlix-.git)

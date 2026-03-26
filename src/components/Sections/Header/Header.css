@@ -18,11 +18,15 @@
   margin: 0 auto;
 }
 
-.header-title h1 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: -1px;
+.header-title h1{
+  letter-spacing: 1px;
+  
+  span {
+    color: #00d1ff;
+  }
 }
+
+
 
 .mobile-menu-toggle {
   display: block;
@@ -154,7 +158,7 @@
     font-size: 1.5rem;
   }
 
-  .mobile-menu-toggle, 
+  .mobile-menu-toggle,
   .mobile-search-toggle {
     display: none;
   }

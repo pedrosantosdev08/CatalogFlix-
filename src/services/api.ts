@@ -12,7 +12,13 @@ export interface Movie {
   genres?: { id: number; name: string }[];
   "watch/providers"?: {
     results?: {
-      BR?: { flatrate?: { provider_id: number; provider_name: string; logo_path: string }[] };
+      BR?: {
+        flatrate?: {
+          provider_id: number;
+          provider_name: string;
+          logo_path: string;
+        }[];
+      };
     };
   };
   videos?: {
@@ -28,14 +34,13 @@ const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 const BASE_URL = "https://api.themoviedb.org/3";
 
 export const fetchFromTMDB = async <T>(
-  endpoint: string, 
-  params: Record<string, string | number> = {}
+  endpoint: string,
+  params: Record<string, string | number> = {},
 ): Promise<T> => {
-  
   const urlParams = new URLSearchParams({
     language: "pt-BR",
     ...Object.fromEntries(
-      Object.entries(params).map(([key, value]) => [key, String(value)])
+      Object.entries(params).map(([key, value]) => [key, String(value)]),
     ),
   });
 
@@ -45,8 +50,8 @@ export const fetchFromTMDB = async <T>(
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${API_TOKEN}`
-    }
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
   });
 
   if (!response.ok) {
@@ -55,13 +60,10 @@ export const fetchFromTMDB = async <T>(
     throw new Error(`Erro HTTP: ${response.status}`);
   }
 
-  return await response.json() as T;
+  return (await response.json()) as T;
 };
 
-export const fetchMovies = async (
-  endpoint: string, 
-  params?: Record<string, string | number>
-): Promise<Movie[]> => {
+export const fetchMovies = async (endpoint: string, params?: Record<string, string | number>): Promise<Movie[]> => {
   const data = await fetchFromTMDB<TMDBResponse<Movie>>(endpoint, params);
   return data.results || [];
 };

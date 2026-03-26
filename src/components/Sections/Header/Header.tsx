@@ -1,7 +1,5 @@
 import {
-  faBell,
   faMagnifyingGlass,
-  faUser,
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
@@ -34,15 +32,17 @@ export function Header({
   return (
     <header className="header-container">
       <div className="header-content">
-        <button 
-          className="mobile-menu-toggle" 
+        <button
+          className="mobile-menu-toggle"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <FontAwesomeIcon icon={isMenuOpen ? faXmark : faBars} />
         </button>
 
         <div className="header-title">
-          <h1>CatalogFlix</h1>
+          <h1>
+            Catalog<span>Flix</span>
+          </h1>
         </div>
 
         <nav className={`nav-wrapper ${isMenuOpen ? "open" : ""}`}>
@@ -61,14 +61,16 @@ export function Header({
         </nav>
 
         <div className="nav-actions">
-          <button 
-            className="mobile-search-toggle" 
+          <button
+            className="mobile-search-toggle"
             onClick={() => setIsSearchOpen(!isSearchOpen)}
           >
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
 
-          <div className={`search-container ${isSearchOpen ? "mobile-open" : ""}`}>
+          <div
+            className={`search-container ${isSearchOpen ? "mobile-open" : ""}`}
+          >
             <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
             <input
               type="text"
@@ -77,14 +79,6 @@ export function Header({
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-
-          <button className="btn-actions desktop-only">
-            <FontAwesomeIcon icon={faBell} size="lg" />
-          </button>
-          
-          <button className="btn-actions profile-btn">
-            <FontAwesomeIcon icon={faUser} size="lg" />
-          </button>
         </div>
       </div>
     </header>
